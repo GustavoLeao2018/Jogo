@@ -1,0 +1,30 @@
+{
+	"name": "cutscene",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "teclado",
+					"sid": 333458131332665,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 219721027635378,
+					"parameters": {
+						"layout": "fase 1"
+					}
+				}
+			],
+			"sid": 944187174736046
+		}
+	],
+	"sid": 904796500645620
+}

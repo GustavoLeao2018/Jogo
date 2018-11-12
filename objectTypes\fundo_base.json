@@ -1,0 +1,19 @@
+{
+	"name": "fundo_base",
+	"plugin-id": "TiledBg",
+	"sid": 892176662360350,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 600,
+		"height": 600,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3
+	}
+}

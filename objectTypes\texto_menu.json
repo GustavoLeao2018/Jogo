@@ -1,0 +1,15 @@
+{
+	"name": "texto_menu",
+	"plugin-id": "Text",
+	"sid": 616952560383153,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Piscar",
+			"sid": 974353323627217
+		}
+	],
+	"effectTypes": []
+}

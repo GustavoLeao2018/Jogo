@@ -1,0 +1,369 @@
+{
+	"name": "fase 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "mover",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 307009749281213
+		},
+		{
+			"eventType": "variable",
+			"name": "arma",
+			"type": "string",
+			"initialValue": "\"falso\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 982775813660364
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Inimigo",
+			"description": "Aqui são as configurações dos inimigos",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "inimigo",
+							"sid": 250596027167356,
+							"behaviorType": "Plataforma"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-jump-strength",
+							"objectClass": "inimigo",
+							"sid": 391727375106558,
+							"behaviorType": "Plataforma",
+							"parameters": {
+								"jump-strength": "-1"
+							}
+						}
+					],
+					"sid": 389020317317952
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "inimigo",
+							"sid": 578370895008221,
+							"parameters": {
+								"object": "seta"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "inimigo",
+							"sid": 205132362326031,
+							"parameters": {
+								"animation": "\"vomitar\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 349508289568243,
+							"parameters": {
+								"variable": "mover",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 817632098309427
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "inimigo",
+							"sid": 882195821427605,
+							"parameters": {
+								"object": "seta2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "inimigo",
+							"sid": 351494320371195,
+							"parameters": {
+								"animation": "\"vomitar\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 522079807777161,
+							"parameters": {
+								"variable": "mover",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 495170278799309
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 950096651588880,
+							"parameters": {
+								"first-value": "mover",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "inimigo",
+							"sid": 718782297304325,
+							"behaviorType": "Plataforma",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "inimigo",
+							"sid": 377733495715960,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 694748705029509
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 819116048881529,
+							"parameters": {
+								"first-value": "mover",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "inimigo",
+							"sid": 399424444150999,
+							"behaviorType": "Plataforma",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "inimigo",
+							"sid": 417155460345996,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 869463436589552
+				}
+			],
+			"sid": 473313070471638
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Personagem",
+			"description": "Aqui são as configurações do personagem",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "teclado",
+							"sid": 144040446116605,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "personagem",
+							"sid": 229649709596329,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 311285404214915
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "teclado",
+							"sid": 431157065770917,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "personagem",
+							"sid": 891838683246433,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 726046739574405
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "personagem",
+							"sid": 809337252979883,
+							"parameters": {
+								"object": "AmigoMorto"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 218210357057730,
+							"parameters": {
+								"variable": "arma",
+								"value": "\"True\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "personagem",
+							"sid": 733245346335212,
+							"parameters": {
+								"animation": "\"andar_armado\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 392530972287340
+				}
+			],
+			"sid": 247901080608342
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Bala",
+			"description": "Aqui são as configurações de arma",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-released",
+							"objectClass": "teclado",
+							"sid": 504917178787521,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "personagem",
+							"sid": 916399108902111,
+							"parameters": {
+								"animation": "\"andar_armado\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "personagem",
+							"sid": 735918214272810,
+							"parameters": {
+								"object": "bala",
+								"layer": "0",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "bala",
+							"sid": 252144828955458,
+							"behaviorType": "Projétil",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 371258631835931
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "bala",
+							"sid": 434393021750554
+						},
+						{
+							"id": "is-mirrored",
+							"objectClass": "personagem",
+							"sid": 825331377692955
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "bala",
+							"sid": 270300434104432,
+							"behaviorType": "Projétil",
+							"parameters": {
+								"angle": "180"
+							}
+						}
+					],
+					"sid": 399538050317748
+				}
+			],
+			"sid": 558444904486480
+		}
+	],
+	"sid": 848119871821271
+}
