@@ -13,7 +13,17 @@ html, body, canvas {
 }
 
 @font-face {
+	font-family: 'spyagency2_1acad';
+	src: url('fonts/spyagency2_1acad.ttf') format('truetype');
+}
+
+@font-face {
 	font-family: 'PinballChallenge';
 	src: url('fonts/pinballchallenge.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Bolde Rough';
+	src: url('fonts/bolde rough.otf') format('opentype');
 }
 
